@@ -49,6 +49,7 @@ h2 {
 .reset:focus {
     color: white;
     background: rgb(228, 59, 16);
+    transform: scale(1,1);
 }
 
 .game {
@@ -75,6 +76,13 @@ h2 {
     border-radius: 25px;
     transform: rotateY(180deg);
     transition: 0.25s;
+    transition: transform 0.5s ease, background 0.5s ease;
+    /* Add a hover effect for flipped cards */
+    cursor: pointer;
+}
+
+.item:hover:not(.boxOpen):not(.boxMatch) {
+    background: rgb(230, 230, 230); /* Subtle change on hover */
 }
 
 .item.boxOpen {
@@ -96,4 +104,21 @@ h2 {
 
 .boxOpen:after {
     transform: rotateY(180deg);
+    opacity: 0;
+}
+
+/* Matched box styles */
+.boxMatch:after {
+    /* Remove transform to prevent unnecessary rotation */
+    transform: none;
+    opacity: 0;
+}
+
+/* Additional styles for boxMatch to stay in its opened state */
+.boxMatch {
+    transform: rotateY(0deg); /* Ensure it stays in the open state */
+    background: rgb(54, 218, 54); /* Matched box color */
+    color: white; /* Ensure the emoji is visible */
+    transform: scale(1); /* Optional: Add a slight pop effect */
+    transition: background 0.3s ease, transform 0.3s ease;
 }
