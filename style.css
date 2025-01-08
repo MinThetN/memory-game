@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(8, 131, 171);
+    background-color: rgb(4, 77, 101);
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 30px;
-    background: rgb(11, 162, 213);
+    background: rgb(8, 109, 142);
     padding: 40px 60px;
     border-radius: 10px;
 }
@@ -41,6 +41,36 @@ h2 {
     font-size: 1.5em;
     border-radius: 10px;
     letter-spacing: 0.1em;
-    transition: 0.3s;
+    transition: 0.5s;
     font-weight: bold;
+    border: none;
+}
+
+.reset:focus {
+    color: white;
+    background: rgb(228, 59, 16);
+}
+
+.game {
+    width: 550px;
+    height: 550px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* border: 5px solid white; */
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    background: white;
+    border-radius: 25px;
 }
