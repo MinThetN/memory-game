@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(4, 77, 101);
+    background-color: rgb(194, 211, 216);
 }
 
 .container {
@@ -22,7 +22,9 @@ body {
     gap: 30px;
     background: rgb(8, 109, 142);
     padding: 40px 60px;
-    border-radius: 10px;
+    border-radius: 25px;
+    width: 100%; /* Ensure it takes up the full width on mobile */
+    max-width: 600px; /* Limit the max width */
 }
 
 h2 {
@@ -122,3 +124,88 @@ h2 {
     transform: scale(1); /* Optional: Add a slight pop effect */
     transition: background 0.3s ease, transform 0.3s ease;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 30px; /* Reduced padding for mobile */
+    }
+
+    h2 {
+        font-size: 2rem; /* Smaller font size for headings */
+    }
+
+    .reset {
+        font-size: 1.2em; /* Smaller reset button text */
+        padding: 8px 16px;
+    }
+
+    .game {
+        width: 100%; /* Make game take full width */
+        height: auto;
+        gap: 8px; /* Reduced gap */
+    }
+
+    .item {
+        width: 80px; /* Smaller box size for mobile */
+        height: 80px;
+        font-size: 2.5em; /* Smaller emoji size */
+    }
+}
+
+/* iPhone X, 11, 12, 13 - Larger screen mobiles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 40px; /* Adjust padding for larger mobile devices */
+    }
+
+    h2 {
+        font-size: 2.5rem; /* Increase font size for better visibility */
+    }
+
+    .reset {
+        font-size: 1.4em; /* Increase button size slightly */
+        padding: 10px 20px;
+    }
+
+    .game {
+        width: 100%; /* Make game take full width */
+        height: auto;
+        gap: 10px; /* A bit larger gap between items */
+    }
+
+    .item {
+        width: 60px; /* Slightly larger box size for larger mobile */
+        height: 60px;
+        font-size: 3em; /* Slightly larger emoji size */
+        
+    }
+}
+
+/* For smaller phones like iPhone SE */
+@media (max-width: 375px) {
+    .container {
+        padding: 15px 20px; /* Reduce padding for smaller devices */
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Smaller font size for smaller screens */
+    }
+
+    .reset {
+        font-size: 1.1em; /* Make the reset button smaller */
+        padding: 6px 12px;
+    }
+
+    .game {
+        width: 100%; /* Ensure full-width layout */
+        height: auto;
+        gap: 5px; /* Further reduce gap for smaller screens */
+    }
+
+    .item {
+        width: 70px; /* Reduce item size further for very small screens */
+        height: 70px;
+        font-size: 2em; /* Smaller emoji size for very small screens */
+    }
+} 
