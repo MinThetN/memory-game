@@ -21,8 +21,23 @@
             let box = document.createElement('div')
             box.className = 'item'
             box.innerHTML = shuffle_emojis[i]
-            document.querySelector('.game').appendChild(box)
+
+            box.onclick = function() {
+                this.classList.add('boxOpen')
+                setTimeout(function() {
+                    if (document.querySelectorAll('.boxOpen').length > 1){
+                        if (document.querySelectorAll('.boxOpen')[0].innerHTML ==
+                        document.querySelectorAll('.boxOpen')[1].innerHTML) {
+                            document.querySelectorAll('.boxOpen')[0].classList.add
+                            ('boxMatch')
+                        }
+                    }
+                }), 500;
+            }
+
+            document.querySelector('.game').appendChild(box);
         }
+
     </script>
 </body>
 </html>

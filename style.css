@@ -73,4 +73,27 @@ h2 {
     font-size: 3em;
     background: white;
     border-radius: 25px;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 25px;
+    border: 3px solid white;
+    background: rgb(12, 169, 221);
+    /* opacity: 0.5; */
+    transition: 0.25s;
+    transform: rotate(0deg);
+    backface-visibility: hidden;
+}
+
+.boxOpen:after {
+    transform: rotateY(180deg);
 }
