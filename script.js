@@ -1,11 +1,3 @@
-// const emojis = ['🍇', '🍇', '🍉', '🍉', '🍌', '🍌', '🍒', '🍒',
-//     '🍓', '🍓', '🍍', '🍍', '🍑', '🍑', '🍋', '🍋', '🥦', '🥦', '🥝', '🥝' ];
-//     var shuffle_emojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
-//     for (var i = 0; i < emojis.length; i++) {
-//         let box = document.createElement('div')
-//         box.className = 'item'
-//         box.innerHTML = shuffle_emojis[i]
-
 const photos = [
     'img1.jpg', 'img1.jpg', 'img2.jpg', 'img2.jpg', 'img3.jpg', 'img3.jpg',
     'img4.jpg', 'img4.jpg', 'img5.jpg', 'img5.jpg', 'img6.jpg', 'img6.jpg',
@@ -35,8 +27,11 @@ for (let i = 0; i < photos.length; i++) {
                     openBoxes[1].classList.remove('boxOpen');
 
                     if (document.querySelectorAll('.boxMatch').length === photos.length) {
-                        alert('Congratulations! You won the game');
+                        const winNotification = document.getElementById('win-notification');
+                        winNotification.classList.remove('hidden');
+                        winNotification.classList.add('visible');  // Show the win notification
                     }
+
                 } else {
                     openBoxes[0].classList.remove('boxOpen');
                     openBoxes[1].classList.remove('boxOpen');

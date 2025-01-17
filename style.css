@@ -5,6 +5,30 @@
     font-family: monospace;
 }
 
+#win-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #54e346;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    animation: fadeIn 1s ease-out;
+}
+
+#win-notification.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -230,3 +254,14 @@ h2 {
         font-size: 2em; /* Smaller emoji size for very small screens */
     }
 } 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
