@@ -8,10 +8,12 @@
 </head>
 <body>
     <div id="win-notification" class="hidden">Congratulations! You won the game!</div>
+    <div id="loser-notification" class="hidden">Sorry! You lost the game.</div>
     <div class="container">
-        <h2> Memory Game </h2>
+        <h2>Memory Game</h2>
+        <button class="start" onclick="startGame()">Start Game</button>
         <div class="game"></div>
-        <button class="reset" onclick="window.location.reload()"> Reset Game </button>
+        <button class="reset" onclick="window.location.reload()">Reset Game</button>
     </div>
 
     <div class="footer">

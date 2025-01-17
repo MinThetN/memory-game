@@ -10,7 +10,7 @@
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #54e346;
+    background-color: #1cc00e;
     color: white;
     font-size: 1.5rem;
     padding: 10px 20px;
@@ -24,6 +24,27 @@
 #win-notification.visible {
     display: block;
 }
+
+#loser-notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff0000; /* Red background for loser notification */
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    animation: fadeIn 1s ease-out;
+}
+
+#loser-notification.visible {
+    display: block;
+}
+
 
 .hidden {
     display: none;
@@ -243,15 +264,15 @@ h2 {
     }
 
     .game {
-        width: 100%; /* Ensure full-width layout */
+        width: 100%; /* full-width layout */
         height: auto;
-        gap: 5px; /* Further reduce gap for smaller screens */
+        gap: 5px; /* reduce gap for smaller screens */
     }
 
     .item {
         width: 70px; /* Reduce item size further for very small screens */
         height: 70px;
-        font-size: 2em; /* Smaller emoji size for very small screens */
+        font-size: 2em; /* Smaller photo size for very small screens */
     }
 } 
 
