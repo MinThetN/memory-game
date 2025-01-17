@@ -1,39 +1,49 @@
-const emojis = ['🍇', '🍇', '🍉', '🍉', '🍌', '🍌', '🍒', '🍒',
-    '🍓', '🍓', '🍍', '🍍', '🍑', '🍑', '🍋', '🍋', '🥦', '🥦', '🥝', '🥝' ];
-    var shuffle_emojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
-    for (var i = 0; i < emojis.length; i++) {
-        let box = document.createElement('div')
-        box.className = 'item'
-        box.innerHTML = shuffle_emojis[i]
+// const emojis = ['🍇', '🍇', '🍉', '🍉', '🍌', '🍌', '🍒', '🍒',
+//     '🍓', '🍓', '🍍', '🍍', '🍑', '🍑', '🍋', '🍋', '🥦', '🥦', '🥝', '🥝' ];
+//     var shuffle_emojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
+//     for (var i = 0; i < emojis.length; i++) {
+//         let box = document.createElement('div')
+//         box.className = 'item'
+//         box.innerHTML = shuffle_emojis[i]
 
-        box.onclick = function() {
-            this.classList.add('boxOpen')
-            setTimeout(function() {
-                if (document.querySelectorAll('.boxOpen').length > 1){
-                    if (document.querySelectorAll('.boxOpen')[0].innerHTML ==
-                    document.querySelectorAll('.boxOpen')[1].innerHTML) {
-                        document.querySelectorAll('.boxOpen')[0].classList.add
-                        ('boxMatch')
-                        document.querySelectorAll('.boxOpen')[1].classList.add
-                        ('boxMatch')
+const photos = [
+    'img1.jpg', 'img1.jpg', 'img2.jpg', 'img2.jpg', 'img3.jpg', 'img3.jpg',
+    'img4.jpg', 'img4.jpg', 'img5.jpg', 'img5.jpg', 'img6.jpg', 'img6.jpg',
+    'img7.jpg', 'img7.jpg', 'img8.jpg', 'img8.jpg', 'img9.jpg', 'img9.jpg',
+    'img10.jpg', 'img10.jpg'
+];
 
-                        document.querySelectorAll('.boxOpen')[1].classList.remove
-                        ('boxOpen')
-                        document.querySelectorAll('.boxOpen')[0].classList.remove
-                        ('boxOpen')
 
-                        if(document.querySelectorAll('.boxMatch').length == emojis.length) {
-                            alert('Congratulations! You won the game')
-                        }
-                    }   else {
-                            document.querySelectorAll('.boxOpen')[1].classList.remove
-                            ('boxOpen')
-                            document.querySelectorAll('.boxOpen')[0].classList.remove
-                            ('boxOpen')
+const shuffledPhotos = photos.sort(() => (Math.random() > 0.5 ? 2 : -1));
+
+for (let i = 0; i < photos.length; i++) {
+    let box = document.createElement('div');
+    box.className = 'item';
+    box.style.backgroundImage = `url('images/${shuffledPhotos[i]}')`;
+    box.style.backgroundSize = 'cover';
+    box.dataset.photo = shuffledPhotos[i]; // Add a data attribute for matching
+
+    box.onclick = function () {
+        this.classList.add('boxOpen');
+        setTimeout(function () {
+            const openBoxes = document.querySelectorAll('.boxOpen');
+            if (openBoxes.length > 1) {
+                if (openBoxes[0].dataset.photo === openBoxes[1].dataset.photo) {
+                    openBoxes[0].classList.add('boxMatch');
+                    openBoxes[1].classList.add('boxMatch');
+                    openBoxes[0].classList.remove('boxOpen');
+                    openBoxes[1].classList.remove('boxOpen');
+
+                    if (document.querySelectorAll('.boxMatch').length === photos.length) {
+                        alert('Congratulations! You won the game');
                     }
+                } else {
+                    openBoxes[0].classList.remove('boxOpen');
+                    openBoxes[1].classList.remove('boxOpen');
                 }
-            }, 500)
-        }
+            }
+        }, 500);
+    };
 
-        document.querySelector('.game').appendChild(box);
-    }
+    document.querySelector('.game').appendChild(box);
+}

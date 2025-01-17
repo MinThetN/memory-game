@@ -24,7 +24,7 @@ body {
     background: rgb(9, 126, 176);
     padding: 40px 60px;
     border-radius: 25px;
-    width: 100%; /* Ensure it takes up the full width on mobile */
+    width: 100%; /* full width on mobile */
     max-width: 600px; /* Limit the max width */
 }
 
