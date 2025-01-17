@@ -38,7 +38,7 @@
     text-align: center;
     z-index: 1000;
     display: none; /* Hidden by default */
-    animation: fadeIn 1s ease-out;
+    /* animation: fadeIn 1s ease-out; */
 }
 
 #loser-notification.visible {
@@ -188,6 +188,14 @@ h2 {
     color: white; /* Ensure the emoji is visible */
     transform: scale(1); /* Optional: Add a slight pop effect */
     transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Timer display */
+.timer {
+    color: rgb(224, 12, 12);
+    font-size: 1.8rem;
+    margin-bottom: 20px; /* Spacing between timer and game board */
+    font-weight: bold;
 }
 
 

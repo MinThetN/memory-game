@@ -20,11 +20,13 @@ function startGame() {
     const gameContainer = document.querySelector('.game');
     gameContainer.style.pointerEvents = 'auto'; // Enable clicking
 
-    let timeLeft = 30; // 30 seconds timer
+    let timeLeft = 50 // 50 seconds timer
+    document.querySelector('.timer').textContent = `Time left: ${timeLeft}`; // Display initial timer
+
     timer = setInterval(() => {
         if (timeLeft > 0) {
-            console.log(timeLeft + ' seconds remaining');
             timeLeft--;
+            document.querySelector('.timer').textContent = `Time left: ${timeLeft}`; // Update timer on screen
         } else {
             endGame('loser');
         }
