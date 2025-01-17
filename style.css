@@ -5,6 +5,15 @@
     font-family: monospace;
 }
 
+.start {
+    opacity: 1;
+}
+
+.container {
+    opacity: 0.5; /* Lower the opacity for initial state */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity change */
+}
+
 #win-notification {
     position: fixed;
     top: 20px;
@@ -57,6 +66,30 @@ body {
     min-height: 100vh;
     background-color: rgb(194, 211, 216);
     flex-direction: column; /* Align children vertically */
+}
+
+.start {
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    color: white;
+    background: rgb(0, 0, 0);
+    font-size: 1.5em;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+    transition: all 0.5s;
+    font-weight: bold;
+    border: none;
+    position: relative; /* Needed for absolute positioning of ::after */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);   /* the ::after content is bound by the button's border */
+}
+
+/* Timer display */
+.timer {
+    color: rgb(255, 68, 68);
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 .container {
@@ -184,18 +217,9 @@ h2 {
 /* Additional styles for boxMatch to stay in its opened state */
 .boxMatch {
     transform: rotateY(0deg); /* Ensure it stays in the open state */
-    background: rgb(54, 218, 54); /* Matched box color */
-    color: white; /* Ensure the emoji is visible */
-    transform: scale(1); /* Optional: Add a slight pop effect */
+    color: white; /* photo is visible */
+    transform: scale(1); /* Add a slight pop effect */
     transition: background 0.3s ease, transform 0.3s ease;
-}
-
-/* Timer display */
-.timer {
-    color: rgb(224, 12, 12);
-    font-size: 1.8rem;
-    margin-bottom: 20px; /* Spacing between timer and game board */
-    font-weight: bold;
 }
 
 

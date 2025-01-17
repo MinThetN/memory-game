@@ -17,10 +17,12 @@ function startGame() {
     gameStarted = true;
     document.querySelector('.start').disabled = true; // Disable the start button after the game starts
 
+    document.querySelector('.container').style.opacity = 1; // Set the opacity to full when the game starts
+    document.querySelector('.start').style.display = 'none'; // Hide the start button when the game starts
     const gameContainer = document.querySelector('.game');
     gameContainer.style.pointerEvents = 'auto'; // Enable clicking
 
-    let timeLeft = 50 // 50 seconds timer
+    let timeLeft = 50; // 30 seconds timer
     document.querySelector('.timer').textContent = `Time left: ${timeLeft}`; // Display initial timer
 
     timer = setInterval(() => {
@@ -32,6 +34,7 @@ function startGame() {
         }
     }, 1000);
 }
+
 
 function endGame(result) {
     clearInterval(timer);
