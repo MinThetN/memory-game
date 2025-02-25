@@ -198,7 +198,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    /* border: 5px solid white; */
     border-radius: 25px;
     transform-style: preserve-3d;
     perspective: 500px;
@@ -218,7 +217,6 @@ h2 {
     transform: rotateY(180deg);
     transition: 0.25s;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 
         0 4px 6px rgba(0, 0, 0, 0.2),
         inset 0 0 20px rgba(56, 189, 248, 0.1),
